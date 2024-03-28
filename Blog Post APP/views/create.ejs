@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/head'); %>
+    <body>
+        <!-- Navigation-->
+        <%- include('layouts/nav'); %>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('/assets/img/contact-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Make a Post</h1>
+                            <span class="subheading">To create a post !!!! </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
+                        <div class="my-5">
+                            
+                            <form id="postForm" action="/post/store" method="post" enctype="multipart/form-data">
+                                <div class="form-floating">
+                                    <input class="form-control" name="txtTitle" type="text" placeholder="Enter post title..." />
+                                    <label>Title</label>            
+                                </div>
+                                <div class="form-floating">
+                                    <textarea  name="txtDescription"  id="myText" ></textarea>
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#myText').summernote();
+                                        });
+                                      </script>
+                                    <label>Description</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="file" name="txtImage" class="form-control">
+                                    <label>Image</label>
+                                </div>
+                                <button class="btn btn-primary text-uppercase"  type="submit">Add Post</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer-->
+       
+         <%- include('layouts/footer'); %>
+         <!-- Scripts -->
+         <%- include('layouts/script'); %>
+       
+    </body>
+</html>
